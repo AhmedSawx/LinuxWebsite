@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transform: skewX(4);
+  transition: transform 1s;
+  animation: name 3s backwards;
+}
+
+@keyframes name {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 100deg;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+}
