@@ -1,0 +1,44 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 14.5px;
+  @include breakpoints(medium) {
+    font-size: 16px;
+  }
+}
+
+body {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 1.1rem;
+  }
+  overflow: hidden;
+}
+
+::selection {
+  background-color: $red;
+  color: $indigo;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+}
+
+p {
+  line-height: 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}

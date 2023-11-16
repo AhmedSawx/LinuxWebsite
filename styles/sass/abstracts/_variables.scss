@@ -1,0 +1,65 @@
+// Colors
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$base: #fff;
+$base-contrast: #47556b;
+$primary: #009bf9;
+$primary-contrast: #fff;
+$secondary: #70ebf6;
+$secondary-contrast: #25698b;
+$tertiary: #314f6f;
+$tertiary-contrast: #9ab8f1;
+$primary: #009bf9;
+$secondary: #314f6f;
+$success: green;
+$info: cyan;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+
+$bl-color1: #b290fc;
+$bl-color2: #ececec;
+$bl-color3: #f1fa8c;
+$bl-color4: #ff79c6;
+$bl-color5: #ffb86c;
+$bl-color6: #f99393;
+$bl-color7: #ececec;
+$bl-color-faded: #605c7b;
+
+$overlay-color: rgba(0, 0, 0, 0.5);
+$shows-overall: 1000;
+
+// ==========================================
+
+// Fonts
+$font-weights: (
+  "thin": 100,
+  "light": 300,
+  "regular": 400,
+);
+
+// ==========================================
+
+// Screen Devices
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1400px;
+
+// ==========================================
+
+// Layout
+$grid-col: repeat(auto-fit, minmax(250px, 1fr));
+$grid-gap: 2rem;

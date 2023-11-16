@@ -1,0 +1,21 @@
+.container {
+  width: 100%;
+  padding: 1rem;
+  margin: {
+    left: auto;
+    right: auto;
+  }
+
+  @include breakpoints(small) {
+    max-width: 540px;
+  }
+  @include breakpoints(medium) {
+    max-width: 720px;
+  }
+  @include breakpoints(large) {
+    max-width: 960px;
+  }
+  @include breakpoints(extra-large) {
+    max-width: 1340px;
+  }
+}

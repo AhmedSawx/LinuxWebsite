@@ -1,22 +1,15 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transform: skewX(4);
-  transition: transform 1s;
-  animation: name 3s backwards;
-}
+@import "./sass/vendors/normalize/import-now", "./sass/vendors/fonts/roboto";
 
-@keyframes name {
-  0% {
-    rotate: 0;
-  }
-  100% {
-    rotate: 100deg;
-  }
-}
+@import "./sass/abstracts/variables", "./sass/abstracts/mixins",
+  "./sass/abstracts/function", "./sass/abstracts/animations",
+  "./sass/abstracts/global-classes";
 
-ul,
-ol {
-  list-style: none;
-}
+@import "./sass/base/reset";
+
+@import "./sass/layout/grid-system";
+
+// @import "./sass/components/controls", "./sass/components/scroll-bar",
+//   "./sass/components/buttons", "./sass/components/labels";
+
+@import "./sass/pages/banner", "./sass/pages/features", "./sass/pages/news",
+  "./sass/pages/download";

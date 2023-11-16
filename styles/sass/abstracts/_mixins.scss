@@ -1,0 +1,33 @@
+@mixin flexbox($dir: row, $wrap: nowrap, $just: center, $align: center) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  justify-content: $just;
+  align-items: $align;
+}
+
+@mixin grid($cols: $grid-col, $gap: $grid-gap) {
+  display: grid;
+  grid-template-columns: $cols;
+  grid-gap: $gap;
+}
+
+@mixin breakpoints($point) {
+  @if $point == small {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $point == extra-large {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}

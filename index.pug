@@ -1,18 +1,24 @@
+include pugjs/abstracts/variables
+include pugjs/abstracts/mixins
+
 doctype html
 html(lang="en")
   head
-    meta(charset="UTF-8")
-    meta(
-      name="viewport",
-      content="width=device-width, initial-scale=1.0"
-    )
-
-    title Linux Project
-
-    link(
-      rel="stylesheet",
-      href="styles/main.css"
-    )
+    include pugjs/head/main-meta
+    include pugjs/head/seo
+    include pugjs/head/links
 
   body
-    script(src="js/main.js")
+    .page-container
+      include pugjs/body/header-section
+
+      main
+        include pugjs/body/main/banner-section
+        include pugjs/body/main/features-section
+        include pugjs/body/main/news-section
+        include pugjs/body/main/download-section
+
+      include pugjs/body/footer-section
+
+      +toTopBtn
+    include pugjs/body/scripts
