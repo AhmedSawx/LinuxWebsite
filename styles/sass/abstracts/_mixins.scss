@@ -13,7 +13,11 @@
 }
 
 @mixin breakpoints($point) {
-  @if $point == small {
+  @if $point == max-large {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $point == small {
     @media (min-width: $breakpoint-sm) {
       @content;
     }
