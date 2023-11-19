@@ -1,0 +1,17 @@
+.page-container {
+  padding-top: 70px;
+  transition: all 0.3s ease-out;
+  height: 100%;
+  background: $tertiary;
+  z-index: 99999;
+  @include breakpoints(large) {
+    padding-top: 150px;
+  }
+}
+
+@include breakpoints(max-large) {
+  .offcanvas-active .page-container {
+    transform: translate3d(-320px, 0, 0) scale3d(1, 1, 1);
+    height: 100%;
+  }
+}

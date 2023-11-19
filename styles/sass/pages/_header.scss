@@ -4,6 +4,10 @@
   z-index: 99;
 
   .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     right: 0;
@@ -11,10 +15,6 @@
     z-index: $shows-overall;
     height: 70px;
     padding: 0 15px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
     animation-name: header-slide-in;
     animation-duration: 0.5s;
     animation-fill-mode: both;
@@ -26,6 +26,8 @@
       height: 150px;
       transition: all 0.15s linear, background 0ms, box-shadow 0ms;
       padding-bottom: 3px;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
     }
 
     &::before {
@@ -54,6 +56,9 @@
           left: 0px;
         }
       }
+      @include breakpoints(large) {
+        flex-wrap: nowrap;
+      }
 
       .site-title {
         display: inline-block;
@@ -70,6 +75,9 @@
           max-width: 200px;
           height: auto;
           transition: all 0.1s ease-out;
+          @include breakpoints(large) {
+            max-width: 280px;
+          }
         }
       }
 
@@ -96,10 +104,13 @@
       }
 
       .navbar-collapse {
-        display: flex !important;
-        flex-basis: auto;
+        flex-basis: 100%;
         flex-grow: 1;
         align-items: center;
+        @include breakpoints(large) {
+          display: flex !important;
+          flex-basis: auto;
+        }
         @include breakpoints(max-large) {
           position: fixed;
           top: 0;
@@ -112,14 +123,14 @@
           transform: translateX(-320px);
           z-index: 1;
           box-shadow: inset 3px 0 3px 3px rgba(0, 0, 0, 0.15);
-          flex-basis: 100%;
-        }
-        &.open {
-          visibility: visible;
-          width: 320px;
-          transform: none;
-          overflow: auto;
-          height: 100vh;
+          &.open {
+            visibility: visible;
+            width: 320px;
+            transform: none;
+            overflow: auto;
+            height: 100vh;
+            background-color: $tertiary;
+          }
         }
 
         .site-title {
@@ -156,6 +167,7 @@
           list-style: none;
           font-weight: 300;
           flex-wrap: wrap;
+          margin-left: auto !important;
           @include breakpoints(large) {
             padding-right: 36px;
             position: relative;
@@ -163,7 +175,7 @@
             flex-direction: row;
           }
 
-          .menu-item {
+          li {
             display: flex;
             margin-left: 10px;
             @include breakpoints(max-large) {
@@ -172,25 +184,133 @@
               margin-left: 0;
               flex-wrap: wrap;
             }
+
+            &.active a {
+              @include breakpoints(max-large) {
+                border-right: solid 3px $secondary;
+                color: $secondary;
+              }
+              @include breakpoints(large) {
+                color: $secondary;
+              }
+            }
           }
 
-          .menu-item-search .search-submit {
-            position: absolute;
-            top: 6px;
-            right: 10px;
-            width: 24px;
-            height: 24px;
-            border-radius: 24px;
-            border: none;
-            display: block;
-            text-indent: -999px;
-            overflow: hidden;
-            font-size: 0;
-            background-color: transparent;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45.956' height='49.929' viewBox='0 0 12.159 13.21'%3E%3Cg%3E%3Cpath d='M7.33 6.761L5.897 8.108l4.467 4.803c.398.398 1.187.356 1.434.124l.175-.164c.107-.133.38-.813-.043-1.269zM4.823 0A4.838 4.838 0 0 0 0 4.825a4.837 4.837 0 0 0 4.823 4.823 4.838 4.838 0 0 0 4.825-4.823A4.839 4.839 0 0 0 4.823 0zm0 1.779a3.032 3.032 0 0 1 3.046 3.046 3.031 3.031 0 0 1-3.046 3.044 3.03 3.03 0 0 1-3.044-3.044 3.031 3.031 0 0 1 3.044-3.046z' color='%23000' font-weight='400' font-family='sans-serif' white-space='normal' overflow='visible'/%3E%3C/g%3E%3C/svg%3E");
-            background-size: 16px 16px;
-            background-repeat: no-repeat;
-            background-position: center center;
+          a {
+            color: $main-links;
+            padding: 5px;
+            @include breakpoints(max-large) {
+              color: $tertiary-contrast;
+              display: block;
+              padding: 15px 30px;
+              width: 100%;
+            }
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          .menu-item-search {
+            @include breakpoints(max-large) {
+              padding: 15px;
+              background: none !important;
+            }
+            @include breakpoints(large) {
+              position: absolute;
+              right: 0;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+
+            .search-form {
+              position: relative;
+              @include breakpoints(max-large) {
+                width: 100%;
+              }
+              @include breakpoints(large) {
+                visibility: hidden;
+                overflow: hidden;
+                width: 0;
+              }
+
+              label {
+                margin: 0;
+                @include breakpoints(max-large) {
+                  width: 100%;
+                }
+
+                .search-field {
+                  border: solid 1px rgba(255, 255, 255, 0.4);
+                  color: $base;
+                  border-radius: 50px;
+                  padding-right: 36px;
+                  padding-left: 15px;
+                  width: 38px;
+                  transition: width 0.3s ease-out;
+                  @include breakpoints(max-large) {
+                    transition: none !important;
+                    width: 100%;
+                    &:focus {
+                      width: 100%;
+                    }
+                  }
+                }
+              }
+
+              .search-submit {
+                position: absolute;
+                top: 6px;
+                right: 10px;
+                width: 24px;
+                height: 24px;
+                border-radius: 24px;
+                border: none;
+                display: block;
+                text-indent: -999px;
+                overflow: hidden;
+                font-size: 0;
+                background-color: transparent;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45.956' height='49.929' viewBox='0 0 12.159 13.21'%3E%3Cg%3E%3Cpath d='M7.33 6.761L5.897 8.108l4.467 4.803c.398.398 1.187.356 1.434.124l.175-.164c.107-.133.38-.813-.043-1.269zM4.823 0A4.838 4.838 0 0 0 0 4.825a4.837 4.837 0 0 0 4.823 4.823 4.838 4.838 0 0 0 4.825-4.823A4.839 4.839 0 0 0 4.823 0zm0 1.779a3.032 3.032 0 0 1 3.046 3.046 3.031 3.031 0 0 1-3.046 3.044 3.03 3.03 0 0 1-3.044-3.044 3.031 3.031 0 0 1 3.044-3.046z' color='%23000' font-weight='400' font-family='sans-serif' white-space='normal' overflow='visible'/%3E%3C/g%3E%3C/svg%3E");
+                background-size: 16px 16px;
+                background-repeat: no-repeat;
+                background-position: center center;
+              }
+            }
+
+            &.expand .search-form {
+              @include breakpoints(large) {
+                visibility: visible;
+                overflow: visible;
+                width: auto;
+              }
+            }
+
+            &.expand .search-field {
+              @include breakpoints(large) {
+                width: 236px !important;
+                outline: none !important;
+                background-color: $base !important;
+                color: $black !important;
+              }
+            }
+
+            .nav-item-search-toggle {
+              background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='45.956' height='49.929' viewBox='0 0 12.159 13.21'%3E%3Cg%3E%3Cpath d='M7.33 6.761L5.897 8.108l4.467 4.803c.398.398 1.187.356 1.434.124l.175-.164c.107-.133.38-.813-.043-1.269zM4.823 0A4.838 4.838 0 0 0 0 4.825a4.837 4.837 0 0 0 4.823 4.823 4.838 4.838 0 0 0 4.825-4.823A4.839 4.839 0 0 0 4.823 0zm0 1.779a3.032 3.032 0 0 1 3.046 3.046 3.031 3.031 0 0 1-3.046 3.044 3.03 3.03 0 0 1-3.044-3.044 3.031 3.031 0 0 1 3.044-3.046z' color='%23000' font-weight='400' font-family='sans-serif' white-space='normal' overflow='visible' fill='%23fff' fill-opacity='.502'/%3E%3C/g%3E%3C/svg%3E");
+              background-size: 16px 16px;
+              background-repeat: no-repeat;
+              background-position: center center;
+              width: 30px;
+              display: block;
+              overflow: hidden;
+              text-indent: -999px;
+              @include breakpoints(max-large) {
+                display: none;
+              }
+            }
+
+            &.expand .nav-item-search-toggle {
+              display: none;
+            }
           }
         }
 
@@ -201,6 +321,9 @@
             position: absolute;
             top: 40px;
             right: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='43.715' height='44.099' viewBox='0 0 11.566 11.668'%3E%3Cg%3E%3Cpath d='M1.152 0C.832-.01.523.089.394.209l-.082.09a.665.665 0 0 1-.07.067C.136.452.02.696.005.986c-.014.29.097.58.146.638l3.676 3.76a.665.665 0 0 1 0 .929L.21 10.02c-.317.554-.261 1.024.087 1.41.597.328 1.044.298 1.511.019l3.502-3.58a.665.665 0 0 1 .95 0l3.5 3.58c.467.279.915.31 1.51-.018.35-.386.405-.857.088-1.41l-3.62-3.71a.665.665 0 0 1 0-.929l3.677-3.759c.049-.059.16-.349.145-.637-.014-.29-.131-.535-.235-.621a.665.665 0 0 1-.07-.067l-.083-.091c-.13-.12-.438-.22-.757-.207-.323.011-.619.203-.556.13a.665.665 0 0 1-.028.031l-3.572 3.66a.665.665 0 0 1-.95 0L1.735.162a.665.665 0 0 1-.028-.03C1.77.203 1.474.011 1.152 0z' overflow='visible' fill='%239AB8F1' fill-opacity='1'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
             height: 15px;
             width: 15px;
             text-indent: -9999px;
@@ -223,6 +346,18 @@
       @include breakpoints(max-large) {
         display: block;
       }
+    }
+  }
+}
+
+@include breakpoints(large) {
+  .scrolled .navbar {
+    background: $header-bg;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.36);
+    height: 70px;
+
+    &::after {
+      display: block;
     }
   }
 }
