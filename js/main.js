@@ -9,6 +9,14 @@ const listContainer = document.getElementById("navbar-collapse-l"),
     ".menu-item-search .search-form .search-submit"
   );
 
+document.addEventListener("scroll", function () {
+  if (scrollY >= 50) {
+    BODY.classList.add("scrolled");
+  } else {
+    BODY.classList.remove("scrolled");
+  }
+});
+
 burgerIcon.addEventListener("click", function () {
   listContainer.classList.toggle("open");
   BODY.classList.toggle("offcanvas-active");

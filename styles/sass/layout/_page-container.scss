@@ -14,4 +14,30 @@
     transform: translate3d(-320px, 0, 0) scale3d(1, 1, 1);
     height: 100%;
   }
+
+  .offcanvas-active .site-content {
+    position: relative;
+    z-index: 9999999;
+  }
+
+  .site-content::before {
+    content: "";
+    box-shadow: 0 5px 15px black;
+    display: block;
+    height: 3px;
+    background: transparent;
+    margin-top: -3px;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    top: 70px;
+  }
+}
+
+.site-content {
+  background: #f3f7f9;
+  animation-delay: 0.5s;
+  animation-name: main-wrapper-fade-in;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
