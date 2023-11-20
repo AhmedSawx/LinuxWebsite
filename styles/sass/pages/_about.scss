@@ -72,6 +72,9 @@
         .about-image {
           img {
             margin: 0 auto 0 -3rem;
+            @include breakpoints(max-medium) {
+              margin: 20px 0;
+            }
           }
         }
       }

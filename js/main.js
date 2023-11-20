@@ -7,7 +7,8 @@ const listContainer = document.getElementById("navbar-collapse-l"),
   ),
   closeSearch = document.querySelector(
     ".menu-item-search .search-form .search-submit"
-  );
+  ),
+  navLinks = document.querySelectorAll(".navbar-nav li a");
 
 document.addEventListener("scroll", function () {
   if (scrollY >= 50) {
@@ -38,4 +39,14 @@ document.addEventListener("click", function (e) {
   ) {
     searchIcon.parentElement.classList.remove("expand");
   }
+});
+
+navLinks.forEach((ele) => {
+  ele.addEventListener("click", function () {
+    navLinks.forEach((ele) => {
+      ele.parentElement.classList.remove("active");
+    });
+
+    ele.parentElement.classList.add("active");
+  });
 });
