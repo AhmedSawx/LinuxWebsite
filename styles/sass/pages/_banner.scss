@@ -2,6 +2,9 @@
   margin-top: 0;
   z-index: 0;
   overflow: hidden;
+  @include breakpoints(extra-large) {
+    min-height: 925px;
+  }
 
   &::before {
     content: "";
@@ -13,7 +16,7 @@
     right: 0;
     width: 100%;
     background-color: #2a3248;
-    background-image: url("./images/header-bg-optimized.svg");
+    background-image: url("/images/header-bg-optimized.svg");
     background-position: left top;
     background-size: 1920px auto;
     background-attachment: fixed;
@@ -72,9 +75,9 @@
             font-size: 18px;
             line-height: 39px;
             position: absolute;
-            bottom: 160px;
-            left: calc(50% + 30px);
-            width: calc(50% - 60px);
+            bottom: 40%;
+            left: 0;
+            width: calc(50% - 160px);
             text-align: left;
           }
         }
@@ -288,7 +291,7 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    background-image: url("./images/bg-white.svg");
+    background-image: url("/images/bg-white.svg");
     background-repeat: no-repeat;
     background-size: 2300px auto;
     background-position: center top;

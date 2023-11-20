@@ -1,19 +1,9 @@
-@mixin flexbox($dir: row, $wrap: nowrap, $just: center, $align: center) {
-  display: flex;
-  flex-direction: $dir;
-  flex-wrap: $wrap;
-  justify-content: $just;
-  align-items: $align;
-}
-
-@mixin grid($cols: $grid-col, $gap: $grid-gap) {
-  display: grid;
-  grid-template-columns: $cols;
-  grid-gap: $gap;
-}
-
 @mixin breakpoints($point) {
-  @if $point == max-large {
+  @if $point == max-medium {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $point == max-large {
     @media (max-width: $breakpoint-lg) {
       @content;
     }

@@ -1,0 +1,94 @@
+.site-content-about {
+  position: relative;
+  margin-top: 100px;
+  background: $base;
+
+  .card-list {
+    margin: 25px auto;
+    text-align: left;
+    width: 100%;
+
+    .about-card {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 0;
+      @include breakpoints(max-medium) {
+        display: block;
+        padding: 45px 0;
+      }
+
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+        @include breakpoints(max-medium) {
+          flex-direction: column;
+        }
+      }
+
+      .about-details {
+        flex: 1;
+        margin: 0 auto;
+
+        .about-title {
+          color: $text-color;
+          font-size: $font-size-h1;
+          font-variation-settings: "wght" $font-weight-bold;
+          font-weight: 400;
+          @include breakpoints(max-medium) {
+            padding: 0 15px;
+          }
+        }
+
+        .about-desc {
+          font-size: $font-size-large;
+          padding: {
+            top: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+          }
+          @include breakpoints(max-medium) {
+            padding: 15px;
+          }
+        }
+      }
+
+      .about-image {
+        flex: 1;
+        cursor: pointer;
+        @include breakpoints(max-medium) {
+          margin: 20px 0;
+        }
+
+        img {
+          border-radius: $border-radius-lg;
+          display: block;
+          max-width: 100%;
+          transition: transform 0.15s ease-in-out;
+        }
+      }
+
+      &:nth-child(2n) {
+        .about-image {
+          img {
+            margin: 0 auto 0 -3rem;
+          }
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 70px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='170.784' viewBox='0 0 1919.937 170.784' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M0 0c730 186.5 1131.5 143.5 1920.5 143.5l27.5 1015C1384 1294 666 935 0 1192.5z' fill='%23f3f7f9'/%3E%3C/svg%3E");
+    bottom: 0;
+    left: 0;
+    display: none;
+    @include breakpoints(large) {
+      display: block;
+      height: 130px;
+    }
+  }
+}

@@ -1,12 +1,3 @@
-.moving-up-down {
-  animation: up-down 1s ease-in-out infinite alternate;
-}
-
-.showTopBtn {
-  animation: fade-in 0.5s ease-in-out forwards,
-    up-down 1s ease-in-out infinite alternate;
-}
-
 .overlay {
   position: fixed;
   top: 0;

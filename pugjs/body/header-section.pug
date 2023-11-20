@@ -13,7 +13,7 @@ header.site-header
           img(
             width="281",
             height="50",
-            src="./images/Logo2022.png",
+            src="/images/Logo2022.png",
             class="custom-logo",
             alt="Ubuntu Studio"
           )
@@ -23,7 +23,17 @@ header.site-header
         data-toggle="offcanvas"
       )
         span
-          +svg("0 0 30 30", "rgba(255, 255, 255, 0.5)", "2", "round", "10", "M4 7h22M4 15h22M4 23h22")
+          svg(
+            xmlns="http://www.w3.org/2000/svg",
+            viewBox="0 0 30 30"
+          )
+            path(
+              stroke="rgba(255, 255, 255, 0.5)",
+              stroke-width="2",
+              stroke-linecap="round",
+              stroke-miterlimit="10",
+              d="M4 7h22M4 15h22M4 23h22"
+            )
 
       #navbar-collapse-l.navbar-collapse
         h1.site-title
@@ -35,7 +45,7 @@ header.site-header
             img(
                 width="281",
                 height="50",
-                src="./images/Logo2022.png",
+                src="/images/Logo2022.png",
                 class="custom-logo",
                 alt="Ubuntu Studio"
             )
@@ -44,51 +54,26 @@ header.site-header
           li.menu-item.active
             a(
               title="Home",
-              href="#",
+              href="#home",
               class="nav-link"
             ) Home
           li.menu-item
             a(
               title="About",
-              href="#",
+              href="#about",
               class="nav-link"
             ) About
           li.menu-item
             a(
-              title="News",
-              href="#",
+              title="Distro",
+              href="#distro",
               class="nav-link"
-            ) News
-          li.menu-item
-            a(
-              title="Features",
-              href="#",
-              class="nav-link"
-            ) Features
-          li.menu-item
-            a(
-              title="Download",
-              href="#",
-              class="nav-link"
-            ) Download
-          li.menu-item
+            ) Distro
             a(
               title="Support",
-              href="#",
+              href="#support",
               class="nav-link"
             ) Support
-          li.menu-item
-            a(
-              title="Contribute",
-              href="#",
-              class="nav-link"
-            ) Contribute
-          li.menu-item
-            a(
-              title="Merchandise",
-              href="#",
-              class="nav-link"
-            ) Merchandise
           li.menu-item-search
             form(
               method="GET",

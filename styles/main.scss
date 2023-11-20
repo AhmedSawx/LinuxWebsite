@@ -8,8 +8,5 @@
 
 @import "./sass/layout/grid-system", "./sass/layout/page-container";
 
-// @import "./sass/components/controls", "./sass/components/scroll-bar",
-//   "./sass/components/buttons", "./sass/components/labels";
-
-@import "./sass/pages/header", "./sass/pages/banner", "./sass/pages/features",
-  "./sass/pages/news", "./sass/pages/download", "./sass/pages/footer";
+@import "./sass/pages/header", "./sass/pages/banner", "./sass/pages/about",
+  "./sass/pages/distro", "./sass/pages/footer";

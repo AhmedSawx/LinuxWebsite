@@ -13,7 +13,9 @@ $cyan: #17a2b8;
 $white: #fff;
 $gray: #6c757d;
 $gray-dark: #343a40;
+
 $base: #fff;
+$alt-base: #f3f7f9;
 $base-contrast: #47556b;
 $primary: #009bf9;
 $alt-primary: #006bad;
@@ -21,6 +23,9 @@ $primary-contrast: #fff;
 $secondary: #70ebf6;
 $secondary-contrast: #25698b;
 $header-bg: #2d425a;
+$text-color: #4c4d52;
+$footer-color: #94b2bd;
+$distro-color: #475a6c;
 $main-links: #b2d1ff;
 $tertiary: #314f6f;
 $tertiary-contrast: #9ab8f1;
@@ -51,6 +56,14 @@ $font-weights: (
   "light": 300,
   "regular": 400,
 );
+
+$font-weight-bold: 600;
+
+$font-size-h1: clamp(2rem, 2vw + 1rem, 36px);
+
+$font-size-large: clamp(1.2rem, 1.5vw + 1rem, 22px);
+
+$border-radius-lg: 0.66rem;
 
 // ==========================================
 
