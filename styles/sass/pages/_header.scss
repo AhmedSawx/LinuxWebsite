@@ -72,11 +72,15 @@
         }
 
         .custom-logo {
-          max-width: 200px;
+          max-width: 100px;
+          position: relative;
+          left: 30px;
+          top: -10px;
           height: auto;
           transition: all 0.1s ease-out;
           @include breakpoints(large) {
-            max-width: 280px;
+            max-width: 200px;
+            position: static;
           }
         }
       }
@@ -150,11 +154,11 @@
           }
 
           .custom-logo {
-            max-width: 200px;
+            max-width: 150px;
             height: auto;
             transition: all 0.1s ease-out;
             @include breakpoints(large) {
-              max-width: 280px;
+              max-width: 200px;
             }
           }
         }

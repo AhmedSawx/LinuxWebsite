@@ -71,12 +71,13 @@
           color: $main-links;
           text-align: center;
           font-weight: 300;
+          margin-bottom: 40px;
           @include breakpoints(large) {
             font-size: 18px;
+            margin: 0;
             line-height: 39px;
             position: absolute;
-            bottom: 40%;
-            left: 0;
+            left: 30px;
             width: calc(50% - 160px);
             text-align: left;
           }
@@ -84,62 +85,36 @@
 
         .banner-image {
           z-index: 9;
-          margin-bottom: 40px;
-          margin-left: -15%;
-          margin-right: -25%;
-          @include breakpoints(medium) {
-            margin-left: -60px;
-            margin-right: -90px;
+          margin: {
+            right: auto;
+            bottom: 40px;
+            left: auto;
           }
+          width: 60%;
           @include breakpoints(large) {
             position: absolute;
-            left: calc(50% - 60px);
-            top: 0;
+            left: 60%;
+            top: 5%;
           }
 
           .illustration {
             position: relative;
 
-            > div {
-              transform: translateZ(0);
-            }
-
-            .illustration-objects1,
-            .illustration-objects2,
-            .illustration-objects3,
-            .illustration-light {
+            .illustration-base {
               position: absolute;
               top: 0;
               left: 0;
-            }
+              animation: float 6s ease-in-out infinite;
 
-            .illustration-objects1 {
-              animation: float1 12s ease-in-out infinite;
-            }
-
-            .illustration-objects2 {
-              animation: float2 6s ease-in-out infinite;
-              animation-direction: alternate;
-            }
-
-            .illustration-objects3 {
-              animation: float3 6s ease-in-out infinite;
-              animation-direction: alternate;
-            }
-
-            .illustration-light {
-              animation: hideshow 1s linear infinite;
-              animation-direction: alternate;
-            }
-
-            img {
-              max-width: 100%;
-              height: auto;
-              @include breakpoints(large) {
-                max-width: 900px;
-              }
-              @include breakpoints(extra-large) {
-                max-width: none;
+              img {
+                max-width: 300px;
+                height: auto;
+                @include breakpoints(medium) {
+                  max-width: 400px;
+                }
+                @include breakpoints(extra-large) {
+                  max-width: 600px;
+                }
               }
             }
           }

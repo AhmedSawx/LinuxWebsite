@@ -7,27 +7,26 @@
   .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
 
     .item {
       position: relative;
       width: 100%;
+      text-align: center;
       padding-right: 15px;
       padding-left: 15px;
-      @include breakpoints(medium) {
-        flex: 0 0 50%;
-        max-width: 50%;
-      }
-      @include breakpoints(extra-large) {
-        flex: 0 0 33.33333%;
-        max-width: 33.33333%;
+
+      p {
+        position: relative;
+        color: $footer-color;
+        display: inline-block;
+        margin-bottom: 1rem;
       }
 
-      .links {
-        position: relative;
-        margin-bottom: 2rem;
-        color: $footer-color;
+      img {
+        width: 40px;
       }
     }
   }

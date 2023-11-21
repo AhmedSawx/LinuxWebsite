@@ -23,11 +23,6 @@ body {
   background-color: $tertiary;
 }
 
-::selection {
-  background-color: $red;
-  color: $indigo;
-}
-
 ul,
 ol {
   list-style: none;
